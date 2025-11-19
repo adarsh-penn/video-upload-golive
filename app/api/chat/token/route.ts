@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
   CreateChatTokenCommand,
+  ChatTokenCapability,
 } from "@aws-sdk/client-ivschat";
 import { ivsChatClient } from "@/lib/ivschat";
 
@@ -25,7 +26,7 @@ export async function POST(req: NextRequest) {
 
     // Capabilities: SEND_MESSAGE for normal user,
     // extra powers for "moderator"
-    const capabilities = ["SEND_MESSAGE"];
+    const capabilities: ChatTokenCapability[] = ["SEND_MESSAGE"];
     if (isModerator) {
       capabilities.push("DELETE_MESSAGE", "DISCONNECT_USER");
     }
