@@ -32,7 +32,7 @@ export default function WatchPage() {
   useEffect(() => {
     if (!key) return;
     async function loadPlayback() {
-      const res = await fetch(`/api/videos/play?key=${encodeURIComponent(key)}`);
+      const res = await fetch(`/api/videos/play?key=${encodeURIComponent(key!)}`);
       const data = await res.json();
       if (res.ok) setPlaybackUrl(data.playbackUrl);
     }
