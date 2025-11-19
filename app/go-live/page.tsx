@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import IVSBroadcastClient from "amazon-ivs-web-broadcast";
 import ChatPanel from "@/components/ChatPanel";
 
 export default function GoLivePage() {
@@ -15,6 +14,9 @@ export default function GoLivePage() {
     try {
       setError(null);
       setBusy(true);
+
+      // Dynamically import the browser-only SDK
+      const IVSBroadcastClient = (await import("amazon-ivs-web-broadcast")).default;
 
       // 1) Get ingest host + stream key from backend
       const resp = await fetch("/api/live/publish-config");
