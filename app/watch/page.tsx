@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
 type VideoItem = {
@@ -10,7 +10,7 @@ type VideoItem = {
   playbackUrl: string;
 };
 
-export default function WatchPage() {
+function WatchPageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const key = searchParams.get("key");
@@ -110,4 +110,11 @@ export default function WatchPage() {
   );
 }
 
+export default function WatchPage() {
+  return (
+    <Suspense fallback={<div style={{ padding: 24 }}>Loading...</div>}>
+      <WatchPageContent />
+    </Suspense>
+  );
+}
 
