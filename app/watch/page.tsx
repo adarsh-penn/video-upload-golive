@@ -54,7 +54,7 @@ function WatchPageContent() {
           <video
             src={playbackUrl}
             controls
-            style={{ width: "100%", maxWidth: 1100 }}
+            style={{ width: "100%", maxWidth: 800 }}
           />
         ) : (
           <p>Loading video...</p>

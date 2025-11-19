@@ -78,19 +78,19 @@ Thumbs.db
 Desktop.ini
 
 # Large binary files and images (keep only in public folder)
-imgs/
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.mp4
-*.mov
-*.avi
-*.mkv
-*.webm
-!public/imgs/*.jpg
-!public/imgs/*.jpeg
-!public/imgs/*.png
+# imgs/
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.mp4
+# *.mov
+# *.avi
+# *.mkv
+# *.webm
+# !public/imgs/*.jpg
+# !public/imgs/*.jpeg
+# !public/imgs/*.png
 
 # Backup folders
 Backup/
